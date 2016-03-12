@@ -23,9 +23,9 @@ public class EmpleadoView extends Applet{
 //    ArrayList list = new ArrayList();
 
     boolean isHab;
-    JPanel pp ,p, p2,p3,p4,p5,p6,pf,pc;
-    JLabel l,l2,l3,l4,l5, title;
-    JTextField t,t2,t3,t4;
+    JPanel pp ,p, p2,p3,p4,p5,p6,p7,p8 ,pf,pc;
+    JLabel l,l2,l3,l4,l5, title, lced;
+    JTextField t,t2,t3,t4,ced;
     JRadioButton f, m;
     JCheckBox pri, sec, tec;
     Choice c;
@@ -49,11 +49,11 @@ public class EmpleadoView extends Applet{
 
     public void init(){
 
-        vm.setSize(430, 550);
+        vm.setSize(430, 600);
         //inconos de imagenes de botones
         urlsav = getClass().getResource("images/guardar.png");
-        urldel = getClass().getResource("images/user-delete-icon.png");
-        urledit = getClass().getResource("images/edit-28110.jpg");
+        urldel = getClass().getResource("images/shut_down.png");
+        urledit = getClass().getResource("images/clean.png");
         urladd = getClass().getResource("images/download.jpeg");
 
         //creacion de iconos apartir de las url de las imagenes
@@ -69,14 +69,16 @@ public class EmpleadoView extends Applet{
 
 
         //creacion de paneles
-        pp = new JPanel();  pp.setLayout(null); pp.setBackground(Color.gray);  pp.setBounds(0, gp(0), 430, 50);
-        p = new JPanel();  p.setLayout(null); p.setBackground(Color.gray);  p.setBounds(0, gp(1), 430, 50);
-        p2 = new JPanel(); p2.setLayout(null);  p2.setBackground(Color.gray); p2.setBounds(0, gp(2), 430, 50);
-        p3 = new JPanel(); p3.setLayout(null); p3.setBackground(Color.gray);  p3.setBounds(0, gp(3), 430, 50);
-        p4 = new JPanel(); p4.setLayout(null); p4.setBackground(Color.gray); p4.setBounds(0, gp(4), 430, 50);
-        p5 = new JPanel(); p5.setLayout(null); p5.setBackground(Color.gray); p5.setBounds(0, gp(5), 430, 50);
-        p6 = new JPanel(); p6.setLayout(null); p6.setBackground(Color.gray); p6.setBounds(0, gp(6), 430, 210);
-        pf = new JPanel(); pf.setLayout(null); pf.setBounds(0,gp(6), 430, 70);
+        pp = new JPanel();  pp.setLayout(null);   pp.setBounds(0, gp(0), 430, 50);
+        p = new JPanel();  p.setLayout(null);  p.setBounds(0, gp(1), 430, 50);
+        p2 = new JPanel(); p2.setLayout(null);   p2.setBounds(0, gp(2), 430, 50);
+        p7 = new JPanel(); p7.setLayout(null);  p7.setBounds(0, gp(3), 430, 210);
+        p3 = new JPanel(); p3.setLayout(null);   p3.setBounds(0, gp(4), 430, 50);
+        p4 = new JPanel(); p4.setLayout(null);  p4.setBounds(0, gp(5), 430, 50);
+        p5 = new JPanel(); p5.setLayout(null); p5.setBounds(0, gp(6), 430, 50);
+        p6 = new JPanel(); p6.setLayout(null);  p6.setBounds(0, gp(7), 430, 210);
+        p8 = new JPanel(); p8.setLayout(null);  p8.setBounds(0, gp(11)-20, 430, 50);
+        pf = new JPanel(); pf.setLayout(null); pf.setBounds(0,gp(9), 430, 70);
 
         pc = new JPanel(); pc.setLayout(null);  pc.setBounds(0,315, 430, 70);
 
@@ -90,6 +92,9 @@ public class EmpleadoView extends Applet{
         t2 = new JTextField("",10);  t2.setBounds(110, 10, 190, 20);
         l2 = new JLabel("Apellido:"); l2.setBounds(10, 10, 100, 20);
 
+        ced = new JTextField("",10);  ced.setBounds(110, 10, 190, 20);
+        lced = new JLabel("Cedula:"); lced.setBounds(10, 10, 100, 20);
+
         t3= new JTextField("",10);  t3.setBounds(110, 10, 190, 20);
         l3 = new JLabel("Sexo:"); l3.setBounds(10, 10, 100, 20);
 
@@ -100,9 +105,9 @@ public class EmpleadoView extends Applet{
 
 
 
-        bsave = new JButton("Guardar",iconsav); bsave.setBounds(10, 5,100, 50);
-        bdel = new JButton("Borrar",icondel); bdel.setBounds(110, 5,100, 50);
-        bedit =  new JButton("Editar",iconedit); bedit.setBounds(210, 5,100, 50);
+        bsave = new JButton("Guardar",iconsav); bsave.setBounds(40, 5,100, 50);
+        bdel = new JButton("Terminar",icondel); bdel.setBounds(160, 5,100, 50);
+        bedit =  new JButton("Limpiar",iconedit); bedit.setBounds(280, 5,100, 50);
         badd = new JButton("Agregar",iconadd); badd.setBounds(310, 5,100, 50);
 
         bfirst = new JButton("<<"); bfirst.setBounds(120, 5,50, 30);
@@ -126,16 +131,16 @@ public class EmpleadoView extends Applet{
 
 
         //customizar en icono de guardar
-        bsave.setBackground(Color.BLUE); bsave.setBorderPainted(true);  bsave.setContentAreaFilled(true);
+         bsave.setBorderPainted(true);  bsave.setContentAreaFilled(true);
         bsave.setFocusPainted(true); bsave.setOpaque(true);
 
 
         //customizar el icono de borrar
-        bdel.setBackground(Color.BLUE); bdel.setBorderPainted(true);bdel.setContentAreaFilled(true);
+        bdel.setBorderPainted(true);bdel.setContentAreaFilled(true);
         bdel.setFocusPainted(true); bdel.setOpaque(true);
 
         //customizar el icono de editar
-        bedit.setBackground(Color.BLUE);bedit.setBorderPainted(true);bedit.setContentAreaFilled(true);
+        bedit.setBorderPainted(true);bedit.setContentAreaFilled(true);
         bedit.setFocusPainted(true); bedit.setOpaque(true);
 
         //customizar el icono de agregar
@@ -180,6 +185,7 @@ public class EmpleadoView extends Applet{
 
         //parrafo apellido
         p2.add(t2);p2.add(l2);
+        p7.add(ced);p7.add(lced);
 
 
 
@@ -221,6 +227,8 @@ public class EmpleadoView extends Applet{
         p4.add(sec);
         p4.add(tec);
 
+
+
         //parrafo tipo de usuario
         p5.add(l5);p5.add(c);
 
@@ -230,10 +238,21 @@ public class EmpleadoView extends Applet{
         p6.add(textarea);
 
 
+        p8.add(bsave);
+        p8.add(bdel);
+        p8.add(bedit);
+
+//        bsave = new JButton("Guardar",iconsav); bsave.setBounds(10, 5,100, 50);
+//        bdel = new JButton("Terminar",icondel); bdel.setBounds(110, 5,100, 50);
+//        bedit =  new JButton("Limpiar",iconedit); bedit.setBounds(210, 5,100, 50);
+//        badd = new JButton("Agregar",iconadd); badd.setBounds(310, 5,100, 50);
+
         //se agregan al aplet todos los parrafos
         vm.add(pp);vm.add(p); vm.add(p2);vm.add(p3);vm.add(p4);vm.add(p5);
-
+        vm.add(p7);
+        vm.add(p8);
         vm.add(p6);
+
 
 
 
