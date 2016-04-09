@@ -219,9 +219,9 @@ public class EmpleadoView extends Applet{
         tec.setBounds(310,0,190,40);
 
         ButtonGroup groupcheck = new ButtonGroup();
-        group.add(pri);
-        group.add(sec);
-        group.add(tec);
+        groupcheck.add(pri);
+        groupcheck.add(sec);
+        groupcheck.add(tec);
 
         p4.add(pri);
         p4.add(sec);

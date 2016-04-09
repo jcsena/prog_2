@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Christhoval Barba">
+
+    <link href="/favicon.ico" type="icon" rel="icon" /><link href="/favicon.ico" type="icon" rel="shortcut icon" />
+    
+    <title>SSREGC v0.2.13</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.min.css" />
+    <!-- Morris Charts CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/morrisjs/morris.css" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome/font-awesome.min.css" />
+    <!-- sregc Custom -->
+    <link rel="stylesheet" type="text/css" href="/css/sregc.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.default.min.css" />    
+    <link rel="stylesheet" type="text/css" href="/css/jquery.gritter.css" />
+        <link rel="stylesheet" type="text/css" href="/css/tiles.min.css" /><link rel="stylesheet" type="text/css" href="/css/font/entypo.min.css" />
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="/js/libs/jquery/jquery.min.js"></script>    <script type="text/javascript" src="/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+<div id="preloader" style="display: none;">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<section class="wrapper">
+    <div class="leftpanel sticky-leftpanel">
+
+        <div class="logopanel">
+            <h1> SSREGC v0.2.13</h1>
+        </div><!-- logopanel -->
+
+        <div class="leftpanelinner">
+
+            <div style="margin: 0 auto 0 auto; text-align: center; padding: 15px;" class="logo-gobierno">
+                <img src="/img/logo_gob_header.png" alt="" />            </div>
+
+            <!-- This is only visible to small devices -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+
+                <div class="media userlogged">
+                    <!--
+                    <img alt="" src="img/photos/loggeduser.png" class="media-object">
+                    -->
+                    <div class="media-body">
+                        <h4>PRUEBAS</h4>
+                        <span><!-- personal msg --></span>
+                    </div>
+                </div>
+
+                <h5 class="sidebartitle actitle">Cuenta</h5>
+                <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                                        <li><a href="/usermgmt/users/editUser/27"><i class="fa fa-user"></i> <span>Perfil</span></a>
+                        
+
+                    <li><a href="/changePassword"><i class="fa fa-cog"></i> <span>Contraseña</span></a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Salir</span></a></li>
+                </ul>
+            </div>
+
+            
+<h5 class="sidebartitle">Navigación</h5>
+<ul class="nav nav-pills nav-stacked nav-bracket">
+
+            <li>
+            <a href="/dashboard"><i class="fa fa-home"></i> <span>Inicio</span></a>
+        </li>
+    
+    <li class="hidden">
+        <a href="email.html"><span class="pull-right badge badge-success">2</span><i class="fa fa-envelope-o"></i> <span>Email</span></a>
+    </li>
+
+            <li>
+            <a href="/Expedientes/dashboard"><i class="fa fa-certificate fa-fw"></i> <span>Refrendo Electronico</span></a>
+        </li>
+    
+            <li>
+            <a href="/SolicitudEfectivos/dashboard"><i class="fa fa-building fa-fw"></i> <span>Procesos Internos</span></a>
+        </li>
+    
+            <li>
+            <a href="/GestionCobros/dashboard"><i class="fa fa-file-text fa-fw"></i><span>Gestion de Cobros</span></a>
+        </li>
+    
+            <li class="nav-parent">
+            <a href="#"><i class="fa fa-user-secret fa-fw"></i><span>Administración</span></a>
+            <ul class="children" style="">
+                                    <li>
+                        <a href="/allUsers"><i class="fa fa-caret-right"></i> Usuarios</a>
+                    </li>
+
+                    <li>
+                        <a href="/Departamentos/index"><i class="fa fa-caret-right"></i> Unidad Administrativa</a>
+                    </li>
+
+                                
+                    <li>
+                        <a href="/allAdmins"><i class="fa fa-caret-right"></i> Administradores</a>
+                    </li>
+
+                    <li>
+                        <a href="/allGroups"><i class="fa fa-caret-right"></i> Roles</a>
+                    </li>
+
+                    <li>
+                        <a href="/Entidads/index"><i class="fa fa-caret-right"></i> Entidades</a>
+                    </li>
+                            </ul>
+        </li>
+    
+            <li class="nav-parent">
+            <a href="#"><i class="fa fa-wrench fa-fw"></i> <span>Configuraciones</span></a>
+            <ul class="children">
+
+                <li>
+                    <a href="/WebServices/lista"><i class="fa fa-caret-right"></i> Web Services</a>
+                </li>
+
+                <li>
+                    <a href="/permissions"><i class="fa fa-caret-right"></i> Permisos</a>
+                </li>
+
+                <li>
+                    <a href="/Proveedors/lista"><i class="fa fa-caret-right"></i> Proveedores</a>
+                </li>
+
+                <li>
+                    <a href="/MenuDashboards"><i class="fa fa-caret-right"></i> Menu & DashBoard</a>
+                </li>
+
+                <li>
+                    <a href="/SmartStatuses"><i class="fa fa-caret-right"></i> Smart Status</a>
+                </li>
+
+                <li>
+                    <a href="/DocumentsTypes"><i class="fa fa-caret-right"></i> Tipo de Documentos</a>
+                </li>
+
+                <li>
+                    <a href="/Parameters"><i class="fa fa-caret-right"></i> Parametros</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+            <div class="infosummary hidden">
+                <h5 class="sidebartitle">Information Summary</h5>
+                <ul>
+                    <li>
+                        <div class="datainfo">
+                            <span class="text-muted">Daily Traffic</span>
+                            <h4>630, 201</h4>
+                        </div>
+                        <div id="sidebar-chart" class="chart">
+                            <canvas width="59" height="30" style="display: inline-block; width: 59px; height: 30px; vertical-align: top;"></canvas>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="datainfo">
+                            <span class="text-muted">Average Users</span>
+                            <h4>1, 332, 801</h4>
+                        </div>
+                        <div id="sidebar-chart2" class="chart">
+                            <canvas width="59" height="30" style="display: inline-block; width: 59px; height: 30px; vertical-align: top;"></canvas>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="datainfo">
+                            <span class="text-muted">Disk Usage</span>
+                            <h4>82.2%</h4>
+                        </div>
+                        <div id="sidebar-chart3" class="chart">
+                            <canvas width="59" height="30" style="display: inline-block; width: 59px; height: 30px; vertical-align: top;"></canvas>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="datainfo">
+                            <span class="text-muted">CPU Usage</span>
+                            <h4>140.05 - 32</h4>
+                        </div>
+                        <div id="sidebar-chart4" class="chart">
+                            <canvas width="59" height="30" style="display: inline-block; width: 59px; height: 30px; vertical-align: top;"></canvas>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="datainfo">
+                            <span class="text-muted">Memory Usage</span>
+                            <h4>32.2%</h4>
+                        </div>
+                        <div id="sidebar-chart5" class="chart">
+                            <canvas width="59" height="30" style="display: inline-block; width: 59px; height: 30px; vertical-align: top;"></canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- infosummary -->
+
+        </div><!-- leftpanelinner -->
+    </div>
+
+    <div class="mainpanel">
+        <div class="headerbar">
+
+            <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+            <form class="searchform hidden" action="index.html" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here...">
+            </form>
+
+            <div class="header-right">
+                <ul class="headermenu">
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                PRUEBAS                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                                                <li><a href="/usermgmt/users/editUser/27"><i class="glyphicon glyphicon-user"></i> Perfil</a>
+                                                                    <li><a href="/changePassword"><i class="glyphicon glyphicon-cog"></i> Cambiar Contraseña</a></li>
+                                <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i> Salir</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- header-right -->
+
+        </div>
+
+        
+    <div class="pageheader">
+        <h2><i class="fa fa-file-excel-o fa-5x"></i> Solicitud de Planilla <span>dashboard</span></h2>
+
+                            <div class="breadcrumb-wrapper">
+                <span class="label">Estas en:</span>
+                <ol class="breadcrumb">
+                                                                                            <li >
+                                                            <a href="/">
+                                    SSREGC                                </a>
+                            
+                        </li>
+                                                                                            <li >
+                                                            <a href="/SolicitudPlanillas">
+                                    SolicitudPlanilla                                </a>
+                            
+                        </li>
+                                                                                            <li class="active">
+                            dashboard
+                        </li>
+                                    </ol>
+
+            </div>
+            </div>
+
+        <div class="contentpanel">
+
+            <div class="flash-msg hidden">
+                            </div>
+            <div id="sregcContainer">
+                
+
+<div class="row noheader">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Solicitud de Planilla
+            <small>Adquisición de Bienes y Servicios</small>
+        </h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<div class="row">
+
+    
+
+    
+        <div class="col-lg-3 col-md-6">
+            <a href="/SolicitudPlanillas/index/pending">
+                <div class="tile-stats tile-dark-red">
+                    <div class="icon">
+                        <i class="fa fa-check-circle-o fa-5x"></i>
+                    </div>
+                    <div class="stat">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="huge pull-right"><pre class="cake-error"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr56e867da2f1c3-trace').style.display = (document.getElementById('cakeErr56e867da2f1c3-trace').style.display == 'none' ? '' : 'none');"><b>Notice</b> (8)</a>: Undefined variable: solicitudesPendingCount [<b>APP/View/SolicitudPlanillas/dashboard.ctp</b>, line <b>63</b>]<div id="cakeErr56e867da2f1c3-trace" class="cake-stack-trace" style="display: none;"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr56e867da2f1c3-code').style.display = (document.getElementById('cakeErr56e867da2f1c3-code').style.display == 'none' ? '' : 'none')">Code</a> <a href="javascript:void(0);" onclick="document.getElementById('cakeErr56e867da2f1c3-context').style.display = (document.getElementById('cakeErr56e867da2f1c3-context').style.display == 'none' ? '' : 'none')">Context</a><pre id="cakeErr56e867da2f1c3-code" class="cake-code-dump" style="display: none;"><code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">div&nbsp;</span><span style="color: #007700">class=</span><span style="color: #DD0000">"row"</span><span style="color: #007700">&gt;</span></span></code>
+<code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">div&nbsp;</span><span style="color: #007700">class=</span><span style="color: #DD0000">"col-xs-12"</span><span style="color: #007700">&gt;</span></span></code>
+<span class="code-highlight"><code><span style="color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="huge&nbsp;pull-right"&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$solicitudesPendingCount</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/div&gt;</span></code></span></pre><pre id="cakeErr56e867da2f1c3-context" class="cake-context" style="display: none;">$viewFile = &#039;/Library/WebServer/Documents/ssregc/app/View/SolicitudPlanillas/dashboard.ctp&#039;
+$dataForView = array(
+	&#039;dataDonut&#039; =&gt; array(
+		(int) 0 =&gt; array(
+			&#039;label&#039; =&gt; &#039;Creado&#039;,
+			&#039;value&#039; =&gt; &#039;6&#039;
+		),
+		(int) 1 =&gt; array(
+			&#039;label&#039; =&gt; &#039;Completo&#039;,
+			&#039;value&#039; =&gt; &#039;4&#039;
+		),
+		(int) 2 =&gt; array(
+			&#039;label&#039; =&gt; &#039;Recursos Humanos&#039;,
+			&#039;value&#039; =&gt; &#039;3&#039;
+		),
+		(int) 3 =&gt; array(
+			&#039;label&#039; =&gt; &#039;Presupuesto&#039;,
+			&#039;value&#039; =&gt; &#039;3&#039;
+		),
+		(int) 4 =&gt; array(
+			&#039;label&#039; =&gt; &#039;Director de Finanzas&#039;,
+			&#039;value&#039; =&gt; &#039;1&#039;
+		)
+	),
+	&#039;pageheader&#039; =&gt; array(
+		&#039;title&#039; =&gt; &#039;Solicitud de Planilla&#039;,
+		&#039;subtitle&#039; =&gt; &#039;dashboard&#039;,
+		&#039;icon&#039; =&gt; &#039;fa fa-file-excel-o fa-5x&#039;,
+		&#039;breadcrumb&#039; =&gt; array(
+			(int) 0 =&gt; array(
+				[maximum depth reached]
+			),
+			(int) 1 =&gt; array(
+				[maximum depth reached]
+			),
+			(int) 2 =&gt; array(
+				[maximum depth reached]
+			)
+		)
+	),
+	&#039;menus&#039; =&gt; array(
+		(int) 0 =&gt; &#039;home&#039;,
+		(int) 1 =&gt; &#039;refrendo&#039;,
+		(int) 2 =&gt; &#039;procesos&#039;,
+		(int) 3 =&gt; &#039;gestion-cobros&#039;,
+		(int) 4 =&gt; &#039;admin&#039;,
+		(int) 5 =&gt; &#039;admin-users&#039;,
+		(int) 6 =&gt; &#039;admin-admins&#039;,
+		(int) 7 =&gt; &#039;admin_config&#039;,
+		(int) 8 =&gt; &#039;pi-reembolso-caja-menuda&#039;,
+		(int) 9 =&gt; &#039;pi-viaticos&#039;,
+		(int) 10 =&gt; &#039;pi-planillas&#039;,
+		(int) 11 =&gt; &#039;gc-add&#039;,
+		(int) 12 =&gt; &#039;gc-search&#039;,
+		(int) 13 =&gt; &#039;gc-pendientes&#039;,
+		(int) 14 =&gt; &#039;rf-add&#039;,
+		(int) 15 =&gt; &#039;rf-index&#039;,
+		(int) 16 =&gt; &#039;rf-pendientes&#039;,
+		(int) 17 =&gt; &#039;pi-monto-disponible&#039;,
+		(int) 18 =&gt; &#039;pi-monto-solicitado&#039;,
+		(int) 19 =&gt; &#039;se-add&#039;,
+		(int) 20 =&gt; &#039;se-index-pending&#039;,
+		(int) 21 =&gt; &#039;se-index&#039;,
+		(int) 22 =&gt; &#039;se-index-my&#039;,
+		(int) 23 =&gt; &#039;se-index-total&#039;,
+		(int) 24 =&gt; &#039;se-chart-my&#039;,
+		(int) 25 =&gt; &#039;se-chart-departamentos&#039;,
+		(int) 26 =&gt; &#039;vi-add&#039;,
+		(int) 27 =&gt; &#039;vi-index-pending&#039;,
+		(int) 28 =&gt; &#039;vi-index&#039;,
+		(int) 29 =&gt; &#039;vi-index-my&#039;,
+		(int) 30 =&gt; &#039;vi-index-total&#039;,
+		(int) 31 =&gt; &#039;se-my-table&#039;,
+		(int) 32 =&gt; &#039;se-pending-table&#039;,
+		(int) 33 =&gt; &#039;se-totals-table&#039;
+	)
+)
+$dataDonut = array(
+	(int) 0 =&gt; array(
+		&#039;label&#039; =&gt; &#039;Creado&#039;,
+		&#039;value&#039; =&gt; &#039;6&#039;
+	),
+	(int) 1 =&gt; array(
+		&#039;label&#039; =&gt; &#039;Completo&#039;,
+		&#039;value&#039; =&gt; &#039;4&#039;
+	),
+	(int) 2 =&gt; array(
+		&#039;label&#039; =&gt; &#039;Recursos Humanos&#039;,
+		&#039;value&#039; =&gt; &#039;3&#039;
+	),
+	(int) 3 =&gt; array(
+		&#039;label&#039; =&gt; &#039;Presupuesto&#039;,
+		&#039;value&#039; =&gt; &#039;3&#039;
+	),
+	(int) 4 =&gt; array(
+		&#039;label&#039; =&gt; &#039;Director de Finanzas&#039;,
+		&#039;value&#039; =&gt; &#039;1&#039;
+	)
+)
+$pageheader = array(
+	&#039;title&#039; =&gt; &#039;Solicitud de Planilla&#039;,
+	&#039;subtitle&#039; =&gt; &#039;dashboard&#039;,
+	&#039;icon&#039; =&gt; &#039;fa fa-file-excel-o fa-5x&#039;,
+	&#039;breadcrumb&#039; =&gt; array(
+		(int) 0 =&gt; array(
+			&#039;name&#039; =&gt; &#039;SSREGC&#039;,
+			&#039;url&#039; =&gt; &#039;/&#039;
+		),
+		(int) 1 =&gt; array(
+			&#039;name&#039; =&gt; &#039;SolicitudPlanilla&#039;,
+			&#039;url&#039; =&gt; &#039;/SolicitudPlanillas&#039;
+		),
+		(int) 2 =&gt; array(
+			&#039;name&#039; =&gt; &#039;dashboard&#039;
+		)
+	)
+)
+$menus = array(
+	(int) 0 =&gt; &#039;home&#039;,
+	(int) 1 =&gt; &#039;refrendo&#039;,
+	(int) 2 =&gt; &#039;procesos&#039;,
+	(int) 3 =&gt; &#039;gestion-cobros&#039;,
+	(int) 4 =&gt; &#039;admin&#039;,
+	(int) 5 =&gt; &#039;admin-users&#039;,
+	(int) 6 =&gt; &#039;admin-admins&#039;,
+	(int) 7 =&gt; &#039;admin_config&#039;,
+	(int) 8 =&gt; &#039;pi-reembolso-caja-menuda&#039;,
+	(int) 9 =&gt; &#039;pi-viaticos&#039;,
+	(int) 10 =&gt; &#039;pi-planillas&#039;,
+	(int) 11 =&gt; &#039;gc-add&#039;,
+	(int) 12 =&gt; &#039;gc-search&#039;,
+	(int) 13 =&gt; &#039;gc-pendientes&#039;,
+	(int) 14 =&gt; &#039;rf-add&#039;,
+	(int) 15 =&gt; &#039;rf-index&#039;,
+	(int) 16 =&gt; &#039;rf-pendientes&#039;,
+	(int) 17 =&gt; &#039;pi-monto-disponible&#039;,
+	(int) 18 =&gt; &#039;pi-monto-solicitado&#039;,
+	(int) 19 =&gt; &#039;se-add&#039;,
+	(int) 20 =&gt; &#039;se-index-pending&#039;,
+	(int) 21 =&gt; &#039;se-index&#039;,
+	(int) 22 =&gt; &#039;se-index-my&#039;,
+	(int) 23 =&gt; &#039;se-index-total&#039;,
+	(int) 24 =&gt; &#039;se-chart-my&#039;,
+	(int) 25 =&gt; &#039;se-chart-departamentos&#039;,
+	(int) 26 =&gt; &#039;vi-add&#039;,
+	(int) 27 =&gt; &#039;vi-index-pending&#039;,
+	(int) 28 =&gt; &#039;vi-index&#039;,
+	(int) 29 =&gt; &#039;vi-index-my&#039;,
+	(int) 30 =&gt; &#039;vi-index-total&#039;,
+	(int) 31 =&gt; &#039;se-my-table&#039;,
+	(int) 32 =&gt; &#039;se-pending-table&#039;,
+	(int) 33 =&gt; &#039;se-totals-table&#039;
+)
+$canAdd = false</pre><pre class="stack-trace">include - APP/View/SolicitudPlanillas/dashboard.ctp, line 63
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 186</pre></div></pre></div>
+                            </div>
+                        </div>
+
+                        <div class="mb15"></div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <small class="stat-label">Solicitudes</small>
+                                <h4>Pendientes</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    
+
+
+</div>
+<!-- /.row -->
+
+<div class="row">
+    
+
+
+
+            <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Solicitudes Por Estados
+                </div>
+                <div class="panel-body">
+                    <div id="morris-donut-chart" data-donut='[{"label":"Creado","value":"6"},{"label":"Completo","value":"4"},{"label":"Recursos Humanos","value":"3"},{"label":"Presupuesto","value":"3"},{"label":"Director de Finanzas","value":"1"}]'></div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+    </div>
+
+<!-- /.row -->
+
+<!-- Morris Charts JavaScript -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+
+    <table class="cake-sql-log" id="cakeSqlLog_145807151456e867da305ff1_22592197" summary="Cake SQL Log" cellspacing="0"><caption>(oficina) 4 queries took 11 ms</caption>	<thead>
+		<tr><th>Nr</th><th>Query</th><th>Error</th><th>Affected</th><th>Num. rows</th><th>Took (ms)</th></tr>
+	</thead>
+	<tbody>
+	<tr><td>1</td><td>SELECT `MenuDashboard`.`alias`, `MenuDashboard`.`menu_id` FROM `sregc`.`menu_dashboard` AS `MenuDashboard` LEFT JOIN `sregc`.`processes` AS `Process` ON (`Process`.`process_id` = `MenuDashboard`.`menu_id`)  WHERE 1 = 1</td><td></td><td style="text-align: right">34</td><td style="text-align: right">34</td><td style="text-align: right">0</td></tr>
+<tr><td>2</td><td>SELECT `UserGroupMenuDashboard`.`user_groups_menu_id`, `UserGroupMenuDashboard`.`menu_id`, `UserGroupMenuDashboard`.`id`, `UserGroupMenuDashboard`.`permission`, `UserGroupMenuDashboard`.`active`, `UserGroupMenuDashboard`.`create_at`, `UserGroupMenuDashboard`.`update_at`, `UserGroupMenuDashboard`.`create_by`, `UserGroupMenuDashboard`.`update_by`, (select `MenuDashboard`.`name` from menu_dashboard as MenuDashboard where `MenuDashboard`.`menu_id`=`UserGroupMenuDashboard`.`menu_id`) AS  `UserGroupMenuDashboard__menu`, (select `MenuDashboard`.`alias` from menu_dashboard as MenuDashboard where `MenuDashboard`.`menu_id`=`UserGroupMenuDashboard`.`menu_id`) AS  `UserGroupMenuDashboard__alias`, (select `UserGroup`.`name` from user_groups as UserGroup where `UserGroup`.`id`=`UserGroupMenuDashboard`.`id`) AS  `UserGroupMenuDashboard__group` FROM `sregc`.`user_groups_menu_dashboard` AS `UserGroupMenuDashboard`   WHERE `UserGroupMenuDashboard`.`menu_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34)</td><td></td><td style="text-align: right">462</td><td style="text-align: right">462</td><td style="text-align: right">4</td></tr>
+<tr><td>3</td><td>SELECT `Parameter`.`parameter_id`, `Parameter`.`name`, `Parameter`.`value`, `Parameter`.`description`, `Parameter`.`query`, `Parameter`.`active`, `Parameter`.`create_at`, `Parameter`.`update_at`, `Parameter`.`create_by`, `Parameter`.`update_by` FROM `sregc`.`parameters` AS `Parameter`   WHERE `Parameter`.`active` = &#039;1&#039;</td><td></td><td style="text-align: right">13</td><td style="text-align: right">13</td><td style="text-align: right">6</td></tr>
+<tr><td>4</td><td>SELECT (select SmartStatus.name from smart_status as SmartStatus where SmartStatus.smart_status_id=SolicitudPlanilla.smart_status_id) as SolicitudPlanilla__label, COUNT(SolicitudPlanilla.smart_status_id) as SolicitudPlanilla__value FROM `sregc`.`solicitud_planilla` AS `SolicitudPlanilla`   WHERE `SolicitudPlanilla`.`anulado` = &#039;0&#039; AND `SolicitudPlanilla`.`solicitado_por` = 27  GROUP BY (select `SmartStatus`.`name` from smart_status as SmartStatus where `SmartStatus`.`smart_status_id`=`SolicitudPlanilla`.`smart_status_id`)  ORDER BY (COUNT(`SolicitudPlanilla`.`smart_status_id`)) DESC</td><td></td><td style="text-align: right">5</td><td style="text-align: right">5</td><td style="text-align: right">1</td></tr>
+	</tbody></table>
+	
+</section>
+
+<section class="dialogs"></section>
+<!-- /#wrapper -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/libs/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/toggles.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery/jquery.cookies.js"></script>
+<script type="text/javascript" src="/js/libs/jquery/jquery.sparkline.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery/jquery.gritter.min.js"></script>
+
+<script type="text/javascript" src="/js/custom.js"></script>
+
+<script type="text/javascript" src="/js/sregc.min.js"></script><script type="text/javascript" src="/js/libs/raphael/raphael.min.js"></script><script type="text/javascript" src="/js/libs/morrisjs/morris.min.js"></script><script type="text/javascript" src="/js/jQuery.dialogs.data.min.js"></script><script type="text/javascript" src="/js/models/SolicitudPlanilla.min.js"></script>
+</body>
+
+</html>
