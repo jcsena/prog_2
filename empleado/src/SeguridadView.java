@@ -2,36 +2,26 @@
  * Created by Julio on 11/3/16.
  */
 
-        import java.applet.Applet;
-        import java.awt.*;
-        import javax.swing.*;
+import java.applet.Applet;
+import java.awt.*;
+import javax.swing.*;
 
-public class EmpleadoView extends Applet{
-
-
-    EmpleadoView vm = this;
+public class SeguridadView extends Applet{
 
 
-    boolean isHab;
+    SeguridadView vm = this;
+
+
     JPanel pp ,p, p2,p3,p4,p5,p6,p7,p8 ,pf,pc;
-    JLabel l,l2,l3,l4,l5, title, lced;
-    JTextField t,t2,t3,t4,ced;
-    JRadioButton f, m;
+    JLabel l,l2, title;
+    JTextField t,t2;
     JCheckBox pri, sec, tec;
     Choice c;
-    JButton bsave, bdel,bedit,badd, bnext, bpast , bfirst, blast;
+    JButton bsave, bdel,bedit,badd;
     java.net.URL urlsav,urldel, urledit, urladd;
     ImageIcon iconsav,icondel, iconedit, iconadd;
     int fp = 50;
 
-    public void habilarCampos(boolean b){
-        vm.t.setEditable(b);
-        vm.t2.setEditable(b);
-        vm.t3.setEditable(b);
-        vm.t4.setEditable(b);
-        vm.c.setEnabled(b);
-        isHab = b;
-    }
 
     private int gp(int n){
         return n * fp;
@@ -39,7 +29,7 @@ public class EmpleadoView extends Applet{
 
     public void init(){
 
-        vm.setSize(430, 600);
+        vm.setSize(430, 250);
         //inconos de imagenes de botones
         urlsav = getClass().getResource("images/guardar.png");
         urldel = getClass().getResource("images/shut_down.png");
@@ -65,7 +55,7 @@ public class EmpleadoView extends Applet{
         p4 = new JPanel(); p4.setLayout(null);  p4.setBounds(0, gp(5), 430, 50);
         p5 = new JPanel(); p5.setLayout(null); p5.setBounds(0, gp(6), 430, 50);
         p6 = new JPanel(); p6.setLayout(null);  p6.setBounds(0, gp(7), 430, 210);
-        p8 = new JPanel(); p8.setLayout(null);  p8.setBounds(0, gp(11)-20, 430, 50);
+        p8 = new JPanel(); p8.setLayout(null);  p8.setBounds(0, gp(3)-20, 430, 50);
         pf = new JPanel(); pf.setLayout(null); pf.setBounds(0,gp(9), 430, 70);
 
         pc = new JPanel(); pc.setLayout(null);  pc.setBounds(0,315, 430, 70);
@@ -80,17 +70,6 @@ public class EmpleadoView extends Applet{
         t2 = new JTextField("",10);  t2.setBounds(110, 10, 190, 20);
         l2 = new JLabel("Apellido:"); l2.setBounds(10, 10, 100, 20);
 
-        ced = new JTextField("",10);  ced.setBounds(110, 10, 190, 20);
-        lced = new JLabel("Cedula:"); lced.setBounds(10, 10, 100, 20);
-
-        t3= new JTextField("",10);  t3.setBounds(110, 10, 190, 20);
-        l3 = new JLabel("Sexo:"); l3.setBounds(10, 10, 100, 20);
-
-        t4= new JTextField("",10);  t4.setBounds(110, 10, 190, 20);
-        l4 = new JLabel("Educación:"); l4.setBounds(10, 10, 100, 20);
-
-        l5 = new JLabel("Asignaturas:",10);  l5.setBounds(10, 10, 80, 20);
-
 
 
         bsave = new JButton("Guardar",iconsav); bsave.setBounds(40, 5,100, 50);
@@ -98,16 +77,11 @@ public class EmpleadoView extends Applet{
         bedit =  new JButton("Limpiar",iconedit); bedit.setBounds(280, 5,100, 50);
         badd = new JButton("Agregar",iconadd); badd.setBounds(310, 5,100, 50);
 
-        bfirst = new JButton("<<"); bfirst.setBounds(120, 5,50, 30);
-        bpast = new JButton("<"); bpast.setBounds(170, 5,50, 30);
-
-        bnext = new JButton(">"); bnext.setBounds(220, 5,50, 30);
-        blast = new JButton(">>"); blast.setBounds(270, 5,50, 30);
 
 
 
         //customizar en icono de guardar
-         bsave.setBorderPainted(true);  bsave.setContentAreaFilled(true);
+        bsave.setBorderPainted(true);  bsave.setContentAreaFilled(true);
         bsave.setFocusPainted(true); bsave.setOpaque(true);
 
 
@@ -122,19 +96,6 @@ public class EmpleadoView extends Applet{
         //customizar el icono de agregar
         badd.setBackground(Color.BLUE);badd.setBorderPainted(true);badd.setContentAreaFilled(true);
         badd.setFocusPainted(true);badd.setOpaque(true);
-
-
-        bpast.setBackground(Color.BLUE);bpast.setBorderPainted(true);bpast.setContentAreaFilled(true);
-        bpast.setFocusPainted(true);bpast.setOpaque(true);
-
-        blast.setBackground(Color.BLUE);blast.setBorderPainted(true);blast.setContentAreaFilled(true);
-        blast.setFocusPainted(true);blast.setOpaque(true);
-
-        bnext.setBackground(Color.BLUE);bnext.setBorderPainted(true);bnext.setContentAreaFilled(true);
-        bnext.setFocusPainted(true);bnext.setOpaque(true);
-
-        bfirst.setBackground(Color.BLUE);bfirst.setBorderPainted(true);bfirst.setContentAreaFilled(true);
-        bfirst.setFocusPainted(true);bfirst.setOpaque(true);
 
 
         //creacion de choice selected
@@ -154,62 +115,13 @@ public class EmpleadoView extends Applet{
 
         //parrafo apellido
         p2.add(t2);p2.add(l2);
-        p7.add(ced);p7.add(lced);
+//        p7.add(ced);p7.add(lced);
 
 
 
-        //parrafo  sexo
-        p3.add(l3);
-        m = new JRadioButton("Femeninio");
-        f = new JRadioButton("Masculino");
-
-        ButtonGroup group = new ButtonGroup();
-        group.add(m);
-        group.add(f);
-
-
-        m.setBounds(110,0,190,40);
-        f.setBounds(210,0,190,40);
-
-        //parrafo apellido
-        p3.add(m);
-        p3.add(f);
-
-
-
-        //parrafo
-        p4.add(l4);
-                pri = new JCheckBox("Primaria");
-                sec = new JCheckBox("Secundaria");
-                tec = new JCheckBox("Tecnico");
-
-        pri.setBounds(110,0,190,40);
-        sec.setBounds(210,0,190,40);
-        tec.setBounds(310,0,190,40);
-
-        ButtonGroup groupcheck = new ButtonGroup();
-        groupcheck.add(pri);
-        groupcheck.add(sec);
-        groupcheck.add(tec);
-
-        p4.add(pri);
-        p4.add(sec);
-        p4.add(tec);
-
-
-
-        //parrafo tipo de usuario
-        p5.add(l5);p5.add(c);
-
-        TextArea textarea =  new TextArea("Bienvenidos\n\nAl Sitema de Primer Ingreso\n\nPor favor Llene los campos", 7, 50);
-        textarea.setBounds(50,20,320,150);
-
-        p6.add(textarea);
-
-
-        p8.add(bsave);
-        p8.add(bdel);
-        p8.add(bedit);
+        p7.add(bsave);
+        p7.add(bdel);
+        p7.add(bedit);
 
 
         //se agregan al aplet todos los parrafos
@@ -219,7 +131,6 @@ public class EmpleadoView extends Applet{
         vm.add(p6);
 
 
-        vm.habilarCampos(true);
 
     }
 
